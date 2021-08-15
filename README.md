@@ -74,19 +74,21 @@ It was made some validation with the register field:
 Once you have followed all the register rules, you have to click on the button 'cadastrar'.
 ![registering](./uploads/registering.png)
 ### Users list
-By doing it, you're going to be redirected to the users list page:
+By doing it, you're going to be redirected to the users list page. You can click on the button 'Cadastrar novo usuário' to be redirected to the register page again.
 ![list](./uploads/list.png)
 
 As you can see on the mongoDB compass, the data you have just registerd are listed on the database
 ![database](./uploads/database.png)
 
-You can click on the button 'Cadastrar novo usuário' to be redirected to the register page again
+Back to the register page, you can register a new user:
 ![registering2](./uploads/registering2.png)
-
-You can also, click on the button 'Lista de Usuários Cadastrados' to be redirected to the users list page
 ![list2](./uploads/list2.png)
 
 As you can see again, on the mongoDB compass, both of the data are listed on the database, ensuring the data are being saved.
 ![database2](./uploads/database2.png)
+
+You can also, click on the button 'Lista de Usuários Cadastrados' on the user register page to be redirected to the users list page.
+![home](./uploads/home.png)
+
 
 
