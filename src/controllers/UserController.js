@@ -19,15 +19,12 @@ module.exports = {
         
         if( !(await schema.isValid(req.body))){
             return res.status(401).json({
-                message:'Falha na validação'})
+                error:'Falha na validação'})
         }
        // const {name, email, cpf, password} = req.body;
-
-        let data = {};
-
         let user = await User.findOne({
             //tratando o email pois ele deve ser unico
-            email: req.body.email})
+        email: req.body.email})
         if(!user){
             const{name, email, cpf, password} = await User.create(req.body)
             return res.status(200).json({
@@ -37,7 +34,7 @@ module.exports = {
             })
         }
         else{
-            return res.status(500).json({message:'Usuário já cadastrado'})
+            return res.status(500).json({error:'Usuário já cadastrado'})
         }
     
     },

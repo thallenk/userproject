@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import * as S from './styles'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,60 +7,65 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
+import api from './../services/api'
     //const history = useHistory();
     const useStyles = makeStyles({
         table: {
             minWidth: 650,
         },
-        });
-
-    function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-    }
-
-    const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    ];
+        })
 
     export default function DenseTable() {
     const classes = useStyles();
+
+    const [users, setUsers] = useState([])
+
+    useEffect(()=>{
+        async function loadUsers(){
+            const response = await api.get('/api/user')
+            setUsers(response.data)     
+
+        }
+        loadUsers()
+    },[])
     
         return(
         <>
-        <h1>Listagem de Usuários</h1>
-                <TableContainer component={Paper}>
-                <Table className={classes.table} size="small" aria-label="a dense table">
-                    <TableHead>
-                    <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
+        <S.Title>
+            <div className='img'>
+                <img alt='logo' src='https://frexco.com.br/wp-content/uploads/2020/04/logo-frexco-slogan.png'/>
+            </div>
+            <h1 align="center">Listagem de Usuários</h1>
+        </S.Title>
+
+        <S.Box>
+            <TableContainer>
+            <Table className={classes.table} size="small" aria-label="a dense table">
+                <TableHead>
+                <TableRow>
+                    <TableCell>Nome</TableCell>
+                    <TableCell align="left">Email</TableCell>
+                    <TableCell align="center">CPF</TableCell>
+                    <TableCell align="center">Data de Cadastro</TableCell>
+
+                </TableRow>
+                </TableHead>
+                <TableBody>
+                {users.map((row) => (
+                    <TableRow key={row._id}>
+                    <TableCell component="th" scope="row">
+                        {row.name}
+                    </TableCell>
+                    <TableCell align="left">{row.email}</TableCell>
+                    <TableCell align="center">{row.cpf}</TableCell>
+                    <TableCell align="center">{row.createdAt.substring(10, 0)}</TableCell>
                     </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.name}>
-                        <TableCell component="th" scope="row">
-                            {row.name}
-                        </TableCell>
-                        <TableCell align="right">{row.calories}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell align="right">{row.carbs}</TableCell>
-                        <TableCell align="right">{row.protein}</TableCell>
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-                </TableContainer>
-        <S.LinkHome to = '/'>Cadastrar novo usuário</S.LinkHome>
+                ))}
+                </TableBody>
+            </Table>
+            </TableContainer>
+            <S.LinkHome to = '/'>Cadastrar novo usuário</S.LinkHome>
+        </S.Box>
         </>
     )
 }
