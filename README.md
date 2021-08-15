@@ -55,38 +55,38 @@ To start in developer mode with NPM:  ` npm run dev `
 
 ### User register
 The home page consist in a forms with some inputs to make de user register.
-![home](./home.png)
+![home](./uploads/home.png)
 It was made some validation with the register field:
 
 1) If there are any field unfiled:
-![nofield](./nofield.png)
+![nofield](./uploads/nofield.png)
 
 2) If there are any requirements not filed:
     - The CPF must have 11 caracters
     - The email must have a email structure
     - The password must have 6 or more caracters
     If you don't follow the rules above, an alert will appears
-    ![validation](./validation.png)
+    ![validation](./uploads/validation.png)
 
 3) If your email have already been registered, an alert will appears:
-![registered](./registered.png)
+![registered](./uploads/registered.png)
 
 Once you have followed all the register rules, you have to click on the button 'cadastrar'.
-![nofield](./nofield.png)
+![nofield](./uploads/nofield.png)
 ### Users list
 By doing it, you're going to be redirected to the users list page:
-[list](./list.png)
+[list](./uploads/list.png)
 
 As you can see on the mongoDB compass, the data you have just registerd are listed on the database
-[database](./database.png)
+[database](./uploads/database.png)
 
 You can click on the button 'Cadastrar novo usuário' to be redirected to the register page again
-[registering2](./registering2.png)
+[registering2](./uploads/registering2.png)
 
 You can also, click on the button 'Lista de Usuários Cadastrados' to be redirected to the users list page
-[list2](./list2.png)
+[list2](./uploads/list2.png)
 
 As you can see again, on the mongoDB compass, both of the data are listed on the database, ensuring the data are being saved.
-[database2](./database2.png)
+[database2](./uploads/database2.png)
 
 
