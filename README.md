@@ -25,7 +25,7 @@ It was installed the nodemon to keep the server working while the project change
 
 
 ## Pages:
-### User Sing-up:
+### User register:
 
 ### Users list:
 
