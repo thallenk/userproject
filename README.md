@@ -66,27 +66,27 @@ It was made some validation with the register field:
     - The email must have a email structure
     - The password must have 6 or more caracters
     If you don't follow the rules above, an alert will appears
-    ![validation](./uploads/validation.png)
+![validation](./uploads/validation.png)
 
 3) If your email have already been registered, an alert will appears:
 ![registered](./uploads/registered.png)
 
 Once you have followed all the register rules, you have to click on the button 'cadastrar'.
-![nofield](./uploads/nofield.png)
+![registering](./uploads/registering.png)
 ### Users list
 By doing it, you're going to be redirected to the users list page:
-[list](./uploads/list.png)
+![list](./uploads/list.png)
 
 As you can see on the mongoDB compass, the data you have just registerd are listed on the database
-[database](./uploads/database.png)
+![database](./uploads/database.png)
 
 You can click on the button 'Cadastrar novo usuário' to be redirected to the register page again
-[registering2](./uploads/registering2.png)
+![registering2](./uploads/registering2.png)
 
 You can also, click on the button 'Lista de Usuários Cadastrados' to be redirected to the users list page
-[list2](./uploads/list2.png)
+![list2](./uploads/list2.png)
 
 As you can see again, on the mongoDB compass, both of the data are listed on the database, ensuring the data are being saved.
-[database2](./uploads/database2.png)
+![database2](./uploads/database2.png)
 
 
